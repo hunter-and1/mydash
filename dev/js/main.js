@@ -543,7 +543,7 @@
       };
       var Default = {
         trigger: Selector.DATA_WIDGET + " " + Selector.LINK,
-        animationSpeed: 300,
+        animationSpeed: 250,
         accordion: true
         /**
          * Class Definition
@@ -702,17 +702,17 @@
         CARD_BODY: '.card-body',
         CARD_FOOTER: '.card-footer',
         COLLAPSED: '.collapsed-card',
-        COLLAPSE_ICON: '.fa-minus',
-        EXPAND_ICON: '.fa-plus'
+        COLLAPSE_ICON: '.la-minus',
+        EXPAND_ICON: '.la-plus'
       };
       var ClassName = {
         COLLAPSED: 'collapsed-card',
         WAS_COLLAPSED: 'was-collapsed',
         MAXIMIZED: 'maximized-card',
-        COLLAPSE_ICON: 'fa-minus',
-        EXPAND_ICON: 'fa-plus',
-        MAXIMIZE_ICON: 'fa-expand',
-        MINIMIZE_ICON: 'fa-compress'
+        COLLAPSE_ICON: 'la-minus',
+        EXPAND_ICON: 'la-plus',
+        MAXIMIZE_ICON: 'la-expand',
+        MINIMIZE_ICON: 'la-compress'
       };
       var Default = {
         animationSpeed: 'normal',

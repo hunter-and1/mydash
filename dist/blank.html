@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>MyDash</title>
   </head>
-  <body class="sidebar-mini">
+  <body class="hold-transition sidebar-mini">
     <div class="wrapper">
     
         <!-- Navbar -->
@@ -66,9 +66,8 @@
                 </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="la la-th-large"></i>
-                    </a>
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
+                    class="la la-th-large"></i></a>
                 </li>
             </ul>
         </nav>
@@ -84,15 +83,24 @@
             </a>
         
             <!-- Sidebar -->
-            <div class="sidebar scrollbar-macosx">
-                
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="img/avatar.png" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div>
+        
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-sidebar flex-column">
+                    <ul class="nav nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                             with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a class="nav-link active">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon la la-dashboard"></i>
                                 <p>
                                     Dashboard
@@ -192,81 +200,6 @@
                                 <p>Components</p>
                             </a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="forms.html">
-                                <i class="nav-icon la la-keyboard-o"></i>
-                                <p>Forms</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tables.html">
-                                <i class="nav-icon la la-th"></i>
-                                <p>Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="notifications.html">
-                                <i class="nav-icon la la-bell"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="typography.html">
-                                <i class="nav-icon la la-font"></i>
-                                <p>Typography</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                <i class="nav-icon la la-dashboard"></i>
-                                <p>Dashboard <span class="badge badge-count">5</span></p>
-                                
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="components.html">
-                                <i class="nav-icon la la-table"></i>
-                                <p>Components</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="forms.html">
-                                <i class="nav-icon la la-keyboard-o"></i>
-                                <p>Forms</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tables.html">
-                                <i class="nav-icon la la-th"></i>
-                                <p>Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="notifications.html">
-                                <i class="nav-icon la la-bell"></i>
-                                <p>Notifications</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="typography.html">
-                                <i class="nav-icon la la-font"></i>
-                                <p>Typography</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                <i class="nav-icon la la-dashboard"></i>
-                                <p>Dashboard <span class="badge badge-count">5</span></p>
-                                
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="components.html">
-                                <i class="nav-icon la la-table"></i>
-                                <p>Components</p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="forms.html">
                                 <i class="nav-icon la la-keyboard-o"></i>
@@ -294,19 +227,8 @@
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
-
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 mb-3 pt-3 d-flex">
-                    <div class="image">
-                        <img src="img/avatar.png" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
-                </div>
             </div>
             <!-- /.sidebar -->
-
         </aside>
     
         <!-- Content Wrapper. Contains page content -->
@@ -333,9 +255,8 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-      
-
-                </div><!-- /.container-fluid -->
+                    
+                </div>
             </section>
             <!-- /.content -->
         </div>
@@ -343,40 +264,10 @@
     
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-            <div class="scrollbar-macosx" data-dsf="dfs">
-                <!-- Control sidebar content goes here -->
+            <!-- Control sidebar content goes here -->
             <div class="p-3">
-                    <h5>Title</h5>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    <p>Sidebar content</p>
-                    
-                </div>
+                <h5>Title</h5>
+                <p>Sidebar content</p>
             </div>
         </aside>
         <!-- /.control-sidebar -->
