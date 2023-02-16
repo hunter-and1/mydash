@@ -1,73 +1,36 @@
 {
   "name": "mydash",
-  "version": "0.1.2",
+  "version": "1.0",
   "description": "",
-  "scripts": {},
+  "type": "module",
+  "scripts": {
+    "test": "gulp test",
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
-    "bootstrap": "^4.3.1",
-    "icheck-bootstrap": "^3.0.1",
+    "bootstrap": "^5.2.3",
     "inputmask": "^4.0.8",
     "jquery": "^3.4.1",
-    "jquery.scrollbar": "^0.2.11",
-    "line-awesome": "^1.0.2",
     "moment": "^2.24.0",
     "overlayscrollbars": "^1.8.0",
     "select2": "^4.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.4",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.5.4",
-    "browser-sync": "^2.26.7",
-    "del": "^5.0.0",
+    "@babel/register": "^7.18.9",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-npm-mainfiles": "^1.0.5",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
-  },
-  "mainfiles": {
-    "jquery": [
-      "/dist/jquery.min.js"
-    ],
-    "bootstrap": [
-      "/dist/css/bootstrap.min.css",
-      "/dist/js/bootstrap.bundle.min.js"
-    ],
-    "@fortawesome/fontawesome-free": [
-      "/css/all.min.css",
-      "/webfonts/*"
-    ],
-    "overlayscrollbars": [
-      "/css/OverlayScrollbars.css",
-      "/js/jquery.overlayScrollbars.js"
-    ],
-    "line-awesome": [
-      "/css/line-awesome.min.css",
-      "/fonts/*"
-    ],
-    "select2": [
-      "/dist/css/select2.min.css",
-      "/dist/js/select2.full.min.js"
-    ],
-    "inputmask": [
-      "/dist/jquery.inputmask.bundle.js"
-    ],
-    "moment": [
-      "/min/moment.min.js"
-    ],
-    "icheck-bootstrap": [
-      "/icheck-bootstrap.min.css"
-    ],
-    "jquery.scrollbar": [
-      "/jquery.scrollbar.css",
-      "/jquery.scrollbar.min.js"
-    ]
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.52.2"
   },
   "keywords": [],
   "author": "Abdellah Elkadiri (HunTerAnD1)",

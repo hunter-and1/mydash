@@ -1,0 +1,254 @@
+
+@import "../../node_modules/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/tables";
+
+@import "../../node_modules/bootstrap/scss/forms";
+
+@import "buttons";
+
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/dropdown";
+@import "../../node_modules/bootstrap/scss/button-group";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../node_modules/bootstrap/scss/pagination";
+@import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/progress";
+@import "../../node_modules/bootstrap/scss/list-group";
+@import "../../node_modules/bootstrap/scss/close";
+@import "../../node_modules/bootstrap/scss/toasts";
+@import "../../node_modules/bootstrap/scss/modal";
+
+@import "tooltip";
+
+@import "../../node_modules/bootstrap/scss/popover";
+@import "../../node_modules/bootstrap/scss/carousel";
+@import "../../node_modules/bootstrap/scss/spinners";
+@import "../../node_modules/bootstrap/scss/offcanvas";
+@import "../../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+@import "fonts";
+
+$width-sidebar-primary: 90px;
+$width-sidebar-secondary: 325px;
+$sidebar-color-default: #3f4254;
+$sidebar-color-primary: $primary;
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  font-family: 'Poppins',Helvetica,sans-serif;
+  font-weight: 400;
+  font-size: 13px !important;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding:8px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
+  border: 0;
+}
+
+.menu-toggle::after {
+  width: 16px;
+  line-height: 0;
+  position: absolute;
+  right: 30px;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .25em 50%;
+}
+
+
+
+.menu-toggle-nav{
+  padding: 0 10px;
+}
+
+.menu-toggle-nav a {
+  display: block;
+  padding: 5px 8px;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+  color: $sidebar-color-default;
+  text-decoration: none;
+}
+.menu-toggle-nav a:hover,
+.menu-toggle-nav a:focus {
+  color: $sidebar-color-primary;
+}
+
+.btn.btn-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  height: calc(1.5em + 1.3rem + 2px);
+  width: calc(1.5em + 1.3rem + 2px);
+}
+
+.btn.btn-transparent-white-hover:hover {
+  color: #fff;
+  background-color: rgba(255,255,255,.1);
+  border-color: transparent;
+}
+
+
+.menu-toggle[aria-expanded="true"]::after {
+  transform: rotate(90deg);
+}
+
+.menu-link-primary{
+  padding: 12px;
+  display: block;
+  margin: 0px 0px 20px 0px;
+}
+
+.menu-link{
+  border-radius: .42rem;
+  text-decoration: none;
+  &.active{
+    background:#f3f6f9;
+  }
+
+  .menu-icon{
+    color: #b5b5c3;
+    
+    &.svg-icon svg g [fill]
+    {
+      -webkit-transition: fill .3s ease;
+      transition: fill .3s ease;
+      fill: #b5b5c3;
+    }
+    
+  }
+  
+  .menu-text{
+    color: #3f4254;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  &.active,
+  &[aria-expanded="true"],
+  &:hover{
+
+    .menu-icon{
+      -webkit-transition: color .3s ease;
+      transition: color .3s ease;
+      color: $primary;
+    
+      &.svg-icon svg g [fill]
+      {
+        -webkit-transition: fill .3s ease;
+        transition: fill .3s ease;
+        fill: $primary;
+      }
+      
+    }
+    
+    .menu-text{
+      -webkit-transition: color .3s ease;
+      transition: color .3s ease;
+      color: $primary;
+    }
+
+  }
+}
+
+.menu-section {
+  padding: 5px 12px;
+  .menu-text{
+    color: #7e8299;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+  }
+}
+
+.flex-column-fluid{
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.flex-row-fluid {
+  -webkit-box-flex: 1;
+  flex: 1 auto;
+  -ms-flex: 1 0 0px;
+  min-width: 0;
+}
+
+
+.main-sidebar-primary{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 98;
+  width: $width-sidebar-primary;
+  //height: 100%;
+  background-color: $primary;
+}
+.main-sidebar-secondary{
+  width: $width-sidebar-secondary;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: $width-sidebar-primary;
+  z-index: 98;
+  //height: 100%;
+  background-color: #fff;
+}
+
+.main-container{
+  padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
+}
+
+.btn-icon-text svg g [fill]{
+  fill:#fff;
+}
