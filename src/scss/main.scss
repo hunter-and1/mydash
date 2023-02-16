@@ -79,11 +79,6 @@ body {
 .menu-toggle {
   display: inline-flex;
   align-items: center;
-  padding:8px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, .65);
-  background-color: transparent;
-  border: 0;
 }
 
 .menu-toggle::after {
@@ -95,8 +90,6 @@ body {
   transition: transform .35s ease;
   transform-origin: .25em 50%;
 }
-
-
 
 .menu-toggle-nav{
   padding: 0 10px;
@@ -110,6 +103,7 @@ body {
   color: $sidebar-color-default;
   text-decoration: none;
 }
+.menu-toggle-nav a.active,
 .menu-toggle-nav a:hover,
 .menu-toggle-nav a:focus {
   color: $sidebar-color-primary;
@@ -148,6 +142,11 @@ body {
 }
 
 .menu-link{
+  border: 0;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background: transparent;
+  padding:8px;
   border-radius: .42rem;
   text-decoration: none;
   &.active{
@@ -223,7 +222,6 @@ body {
   min-width: 0;
 }
 
-
 .main-sidebar-primary{
   position: fixed;
   top: 0;
@@ -247,6 +245,12 @@ body {
 
 .main-container{
   padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
+  width: 100%;
+  height: 100vh;
+
+  .main-container-wrapper{
+    height: 100vh;
+  }
 }
 
 .btn-icon-text svg g [fill]{

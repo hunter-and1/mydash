@@ -13,79 +13,64 @@
   <div class="d-flex flex-row flex-column-fluid wrapper">
 
     <aside class="main-sidebar-primary d-flex justify-content-between flex-column">
-
+      <?php 
+        $listTop = [
+          [
+            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+              height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect><path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                  fill="#ffffff" opacity="0.3"></path></g></svg>',
+            'url' => '/',
+            'title' => 'dd',
+            'badage' => '0',
+            'badage-bg' => 'bg-danger',
+          ],
+          [
+            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+              height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect><path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                  fill="#ffffff" opacity="0.3"></path></g></svg>',
+            'title' => 'dd',
+            'url' => '/',
+          ],
+        ];
+        $listBottom = [
+          [
+            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+              height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect><path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                  fill="#ffffff" opacity="0.3"></path></g></svg>',
+            'url' => '/',
+            'title' => 'dd',
+            'badage' => '0',
+            'badage-bg' => 'bg-danger',
+          ],
+          [
+            'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+              height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect><path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                  fill="#ffffff" opacity="0.3"></path></g></svg>',
+            'title' => 'dd',
+            'url' => '/',
+          ],
+        ];
+      ?>
       <div class="list-menu-top flex-fill">
         <a href="/" class="d-flex justify-content-center my-5">
           <img src="http://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" class="img-fluid" width="60">
         </a>
         <ul class=" list-unstyled my-3 align-items-center text-center">
+        <?php foreach ($listBottom as $k => $item): ?>
           <li class="mb-3">
-            <a href="#" class="btn btn-icon btn-transparent-white-hover" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-container="body" data-bs-boundary="window" data-bs-placement="right" title="Home">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <rect x="0" y="0" width="24" height="24"></rect>
-                  <rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect>
-                  <path
-                    d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
-                    fill="#ffffff" opacity="0.3"></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="btn btn-icon btn-transparent-white-hover">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                  <path
-                    d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                    fill="#ffffff" fill-rule="nonzero" opacity="0.3"></path>
-                  <path
-                    d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                    fill="#ffffff" fill-rule="nonzero"></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-
+            <a href="<?= $item['url'] ?>" class="position-relative btn btn-icon btn-transparent-white-hover" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-boundary="window" data-bs-placement="right" title="<?= $item['title'] ?>"><?= $item['icon'] ?> <?= (isset($item['badage']))?'<span class="position-absolute top-0 start-100 translate-middle badge '.$item['badage-bg'].' rounded-pill">'.$item['badage'].'</span>':''; ?></a>
+          </li>          
+          <?php endforeach ?>
         </ul>
       </div>
       <div class="list-menu-bottom">
 
         <ul class="list-unstyled my-3 align-items-center text-center">
+          <?php foreach ($listBottom as $k => $item): ?>
           <li class="mb-3">
-            <a href="#" class="btn btn-icon btn-transparent-white-hover">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <rect x="0" y="0" width="24" height="24"></rect>
-                  <rect fill="#ffffff" x="4" y="4" width="7" height="7" rx="1.5"></rect>
-                  <path
-                    d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
-                    fill="#ffffff" opacity="0.3"></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="btn btn-icon btn-transparent-white-hover">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                height="24px" viewBox="0 0 24 24" version="1.1">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                  <path
-                    d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                    fill="#ffffff" fill-rule="nonzero" opacity="0.3"></path>
-                  <path
-                    d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                    fill="#ffffff" fill-rule="nonzero"></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-
+            <a href="<?= $item['url'] ?>" class="position-relative btn btn-icon btn-transparent-white-hover" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-boundary="window" data-bs-placement="right" title="<?= $item['title'] ?>"><?= $item['icon'] ?> <?= (isset($item['badage']))?'<span class="position-absolute top-0 start-100 translate-middle badge '.$item['badage-bg'].' rounded-pill">'.$item['badage'].'</span>':''; ?></a>
+          </li>          
+          <?php endforeach ?>
         </ul>
       </div>
 
@@ -104,16 +89,38 @@
           </span>
           <span class="menu-text">Dashhboard</span>
         </a>
-        <ul class="list-menu list-unstyled ps-0">
-          <li class="menu-section">
-            <h4 class="menu-text">Layout</h4>
-          </li>
-          <?php for($i = 0;$i<10;$i++): ?>
-          <li class="mb-1">
-            <button class="btn w-100 menu-link menu-toggle align-items-center rounded collapsed"
-              data-bs-toggle="collapse" data-bs-target="#home-collapse<?= $i ?>" aria-expanded="false">
-              <span class="svg-icon menu-icon me-2">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+        <?php 
+          $list = [
+              'Layout' => [
+                [
+                  'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect x="0" y="0" width="24" height="24"></rect>
+                      <rect fill="#000" x="4" y="4" width="7" height="7" rx="1.5"></rect>
+                      <path
+                        d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                        fill="#000" opacity="0.3"></path>
+                    </g>
+                  </svg>',
+                  'title' => 'Home',
+                  'list' => [
+                    [
+                      'title' => 'Overview 1',
+                      'url' => '/'
+                    ],
+                    [
+                      'title' => 'Overview 2',
+                      'url' => '/'
+                    ],
+                    [
+                      'title' => 'Overview 3',
+                      'url' => '/'
+                    ]
+                  ]
+                ],
+                [
+                  'icon' => '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                   height="24px" viewBox="0 0 24 24" version="1.1">
                   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <rect x="0" y="0" width="24" height="24"></rect>
@@ -122,66 +129,45 @@
                       d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
                       fill="#000" opacity="0.3"></path>
                   </g>
-                </svg>
-              </span>
-              <span class="menu-text">Home</span>
-            </button>
-            <div class="collapse" id="home-collapse<?= $i ?>" style="">
-              <ul class="menu-toggle-nav list-unstyled">
-                <li><a href="#" class="">Overview</a></li>
-                <li><a href="#" class="">Updates</a></li>
-                <li><a href="#" class="">Reports</a></li>
-              </ul>
-            </div>
-          </li>
-          <?php endfor; ?>  
-          <li class="mb-1">
-            <button class="btn w-100 menu-link menu-toggle align-items-center rounded collapsed"
-              data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              <span class="menu-text">Dashboard</span>
-            </button>
-            <div class="collapse" id="dashboard-collapse" style="">
-              <ul class="menu-toggle-nav list-unstyled">
-                <li><a href="#" class="">Overview</a></li>
-                <li><a href="#" class="">Weekly</a></li>
-                <li><a href="#" class="">Monthly</a></li>
-                <li><a href="#" class="">Annually</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn w-100 menu-link menu-toggle align-items-center rounded collapsed"
-              data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              <span class="menu-text">Orders</span>
-            </button>
-            <div class="collapse" id="orders-collapse">
-              <ul class="menu-toggle-nav list-unstyled">
-                <li><a href="#" class="">New</a></li>
-                <li><a href="#" class="">Processed</a></li>
-                <li><a href="#" class="">Shipped</a></li>
-                <li><a href="#" class="">Returned</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="mb-1">
-            <button class="btn w-100 menu-link menu-toggle align-items-center rounded collapsed"
-              data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-              <span class="menu-text">Account</span>
-            </button>
-            <div class="collapse" id="account-collapse">
-              <ul class="menu-toggle-nav list-unstyled">
-                <li><a href="#" class="">New...</a></li>
-                <li><a href="#" class="">Profile</a></li>
-                <li><a href="#" class="">Settings</a></li>
-                <li><a href="#" class="">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
+                  </svg>',
+                  'title' => 'Home2',
+                  'url' => '/'
+                ]
+              ]
+            ];
+        ?>
+        <ul class="list-menu list-unstyled ps-0">
+          <?php foreach ($list as $k => $items): ?>
+            <li class="menu-section">
+              <h4 class="menu-text"><?= $k ?></h4>
+            </li>
+            <?php foreach ($items as $i => $item): ?>
+            <li class="mb-1">
+              <?php if(isset($item['list'])): ?>
+              <button class="btn w-100 menu-link menu-toggle align-items-center collapsed"
+                data-bs-toggle="collapse" data-bs-target="#menu<?= $k ?>-collapse<?= $i ?>" aria-expanded="false">
+                <span class="svg-icon menu-icon me-2"><?= $item['icon'] ?></span>
+                <span class="menu-text"><?= $item['title'] ?></span>
+              </button>
+              <div class="collapse" id="menu<?= $k ?>-collapse<?= $i ?>" style="">
+                <ul class="menu-toggle-nav list-unstyled">
+                  <?php foreach ($item['list'] as $l => $li): ?>
+                    <li><a href="<?= $li['url'] ?>" class=""><?= $li['title'] ?></a></li>
+                  <?php endforeach ?>
+                </ul>
+              </div>
+              <?php elseif(isset($item['url'])): ?>
+              <a href="<?= $li['url'] ?>" class="btn w-100 menu-link text-start"><span class="svg-icon menu-icon me-2"><?= $item['icon'] ?></span><span class="menu-text"><?= $item['title'] ?></span></a>
+              <?php endif; ?>
+            </li>
+            <?php endforeach ?>
+          <?php endforeach ?>
         </ul>
       </div>
     </aside>
     <div class="main-container d-flex flex-column flex-row-fluid wrapper">
       <div class="p-3">
+        
         <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
           <div class="d-flex align-items-center flex-wrap mr-1">
             <div class="d-flex align-items-baseline flex-wrap mr-5">
