@@ -6,8 +6,7 @@
     * Author : Abdellah Elkadiri  (abdellah.elkadiri.dev@gmail.com)
     * Copyright 2018-2019 
     */
-    var _version = 0.12,
-        showLogs = true;
+    var _version = 0.12;
     var $dom = {
         window: $(win),
         body: $('body'),
@@ -16,8 +15,15 @@
         
         
         
+        mainLoader: $('.main-loader'),
+        mainContainer: $('.main-container'),
+
+        sidebarListPrimary: $('.main-sidebar-primary'),
         sidebarListPrimaryTop: $('.main-sidebar-primary .list-menu-top'),
+
         sidebarListSecondary: $('.main-sidebar-secondary'),
+
+        btnToggleSidebarSecondary: $('.btn-toggle-sidebar-secondary'),
 
         //sidebarBrand: $('.main-sidebar .brand-link'),
         //sidebarPanel: $('.main-sidebar .user-panel'),
@@ -26,10 +32,6 @@
         //sidebarButtonMenu: $('a[data-widget=pushmenu]'),
         //sidebarButtonRightPanel: $('a[data-widget=control-sidebar]')
     };
-
-    function consoleLog(text) {
-        if (showLogs) console.log(text);
-    }
 
     var nexDash = {
         $var: {
@@ -64,33 +66,31 @@
                 }
             }
         },
-        version: function version() {
-            consoleLog('version');
+        version: function() {
             return _version;
         },
-        init: function init() {
-            consoleLog('init');
+        init: function() {
             this.compatibilityIE();
 
             this.initSideBar();
             this.initPopover();
             this.initTooltip();
-
-            //this.initSideBarOverlay();
-
+            this.initLoader();
             this.events();
+
         },
-        events: function events() {
-            consoleLog('events');
+        events: function() {
             /** 
              *  Global start
              * */
 
-            // $dom.sidebarLinkTree.on('click', this.whenClickLinkTreeView);
+            $dom.btnToggleSidebarSecondary.on('click', this.whenClickToggleSidebarSecondary);
+
             // $dom.sidebarButtonMenu.on('click', this.whenClickPushMeunSidebar);
             // $dom.sidebarButtonRightPanel.on('click', this.whenClickRightPanelSidebar);
             // $dom.body.on(this.$var.config.triggerName.sidebarOpen, this.triggerSidebarOpen);
             // $dom.body.on(this.$var.config.triggerName.sidebarCollapse, this.triggerSidebarCollapse);
+
             /** 
              *  in Window Triggers
              * */
@@ -98,19 +98,14 @@
             $dom.window.on("resize", this.whenResize);
             $dom.window.on("orientationchange", this.whenOrientationChange);
         },
-        initSideBar: function initSideBar() {
-            consoleLog('initSideBar');
-
-            
-            OverlayScrollbars($dom.sidebarListPrimaryTop, {overflow: {x: 'hidden'}});
-            OverlayScrollbars($dom.sidebarListSecondary, {overflow: {x: 'hidden'}});
-
-            //$dom.sidebarSide.scrollbar();
-
-            // $dom.sidebarSide.parent().css('max-height', this.$var.config.getHeights().window - this.$var.config.getHeights().sidebar.brand - this.$var.config.getHeights().sidebar.upanel);
-            // $dom.sidebarControlRight.find('> div').scrollbar();
-            // $dom.sidebarControlRight.css('top', this.$var.config.getHeights().sidebar.brand);
-            // $dom.sidebarControlRight.find('> div').css('max-height', this.$var.config.getHeights().window - this.$var.config.getHeights().sidebar.brand);
+        initLoader: function () {
+            setTimeout(() => {
+                $dom.mainLoader.remove();
+            }, 200);
+        },
+        initSideBar: function() {
+            //OverlayScrollbars($dom.sidebarListPrimaryTop, {overflow: {x: 'hidden'}});
+            //OverlayScrollbars($dom.sidebarListSecondary, {overflow: {x: 'hidden'}});
         },
         initPopover:function(){
             var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -124,67 +119,61 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl)
             })
         },
-        initSideBarOverlay: function initSideBarOverlay() {
-            consoleLog('initSideBarOverlay');
+        whenClickToggleSidebarSecondary: function() {
 
-            if (!$(nexDash.$var.config.selectorName.sidebarOverlay).length) {
-                var overlay = $('<div />', {
-                    id: 'sidebar-overlay'
+            console.log('sidebarListPrimary',$dom.sidebarListPrimary.outerWidth());
+            console.log('sidebarListSecondary',$dom.sidebarListSecondary.outerWidth());
+
+            if($dom.btnToggleSidebarSecondary.attr('data-visible') == "true")
+            {
+                $dom.sidebarListSecondary.animate({
+                        left: -1 * ($dom.sidebarListSecondary.outerWidth() + 90) ,
+                    }, 300, function() {
                 });
-                overlay.on('click', function () {
-                    $($dom.body).trigger(nexDash.$var.config.triggerName.sidebarCollapse);
+                $dom.btnToggleSidebarSecondary.animate({
+                        right: -16 ,
+                    }, 300, function() {
                 });
-                $(nexDash.$var.config.selectorName.bodyWrapper).append(overlay);
+
+                $dom.mainContainer.animate({
+                    paddingLeft: $dom.sidebarListPrimary.outerWidth() ,
+                }, 300, function() {
+
+                });
+
+               // $dom.mainContainer.removeClass('main-container-with-sidebars').addClass('main-container-with-sidebar-primary');
+
+                $dom.btnToggleSidebarSecondary.attr('data-visible',"false");
+            }
+            else
+            {
+                $dom.sidebarListSecondary.animate({
+                        left: "90px",
+                    }, 300, function() {
+                });
+                $dom.btnToggleSidebarSecondary.animate({
+                        right: -1 * ($dom.sidebarListSecondary.outerWidth() + 16),
+                    }, 300, function() {
+                });
+                $dom.mainContainer.animate({
+                    paddingLeft: $dom.sidebarListPrimary.outerWidth() + $dom.sidebarListSecondary.outerWidth() ,
+                }, 300, function() {
+
+                });
+                //$dom.mainContainer.removeClass('main-container-with-sidebar-primary').addClass('main-container-with-sidebars');
+
+                $dom.btnToggleSidebarSecondary.attr('data-visible',"true");
             }
         },
         //Action
-        triggerSidebarOpen: function triggerSidebarOpen() {
-            consoleLog('triggerSidebarOpen');
+        triggerSidebarOpen: function() {
             $(this).removeClass(nexDash.$var.config.className.sidebarCollapse).addClass(nexDash.$var.config.className.sidebarOpen);
         },
-        triggerSidebarCollapse: function triggerSidebarCollapse() {
-            consoleLog('triggerSidebarCollapse');
-            $(this).removeClass(nexDash.$var.config.className.sidebarOpen).addClass(nexDash.$var.config.className.sidebarCollapse);
-        },
-        //Event handler
-        whenClickRightPanelSidebar: function whenClickRightPanelSidebar() {
-            consoleLog('whenClickRightPanelSidebar');
-            $dom.body.toggleClass('control-sidebar-slide-open');
-        },
-        whenClickPushMeunSidebar: function whenClickPushMeunSidebar(event) {
-            consoleLog('whenClickPushMeunSidebar');
-
-            if ($dom.body.hasClass(nexDash.$var.config.className.sidebarCollapse)) {
-                //$dom.body.removeClass(nexDash.$var.config.className.sidebarCollapse).addClass(nexDash.$var.config.className.sidebarOpen);
-                $($dom.body).trigger(nexDash.$var.config.triggerName.sidebarOpen); //var e = $.Event('shown');
-                //$(this).trigger(e);
-            } else {
-                $($dom.body).trigger(nexDash.$var.config.triggerName.sidebarCollapse); //$dom.body.removeClass(nexDash.$var.config.className.sidebarOpen).addClass(nexDash.$var.config.className.sidebarCollapse);
-                //var e = $.Event('collapsed');
-                //$(this).trigger(e);
-            }
-        },
-        whenClickLinkTreeView: function whenClickLinkTreeView() {
-            consoleLog('whenClickLinkTreeView');
-
-            if (!$(this).parent().hasClass(nexDash.$var.config.className.treeviewMenuOpen)) {
-                $(this).siblings(nexDash.$var.config.selectorName.treeviewNav).slideDown(250, function () {
-                    $(this).parent().addClass(nexDash.$var.config.className.treeviewMenuOpen);
-                });
-            } else {
-                $(this).siblings(nexDash.$var.config.selectorName.treeviewNav).slideUp(250, function () {
-                    $(this).parent().removeClass(nexDash.$var.config.className.treeviewMenuOpen);
-                });
-            }
-        },
-        whenResize: function whenResize() {
-            consoleLog('whenResize');
+        whenResize: function() {
             nexDash.initSideBar();
         },
-        whenOrientationChange: function whenOrientationChange() {
-            consoleLog('whenOrientationChange');
+        whenOrientationChange: function() {
             var orientation = win.orientation;
-
             if (orientation != 0) {
                 if ($vars.isMobile) {
                     $dom.body.addClass("landscape-mobile");
@@ -193,7 +182,7 @@
                 $dom.body.removeClass("landscape-mobile");
             }
         },
-        compatibilityIE: function compatibilityIE() {
+        compatibilityIE: function() {
             function IE() {
                 var iev = 0;
                 var ieold = /MSIE (\d+\.\d+);/.test(navigator.userAgent);
@@ -209,9 +198,7 @@
                 $dom.body.addClass("ie ie11");
             }
         }
-    }; //$(function () {
-    //nexDash.init();
-    //});
+    };
 
     if (!win.nexDash) {
         win.nexDash = nexDash;

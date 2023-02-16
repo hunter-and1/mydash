@@ -124,12 +124,17 @@ body {
   width: calc(1.5em + 1.3rem + 2px);
 }
 
-.btn.btn-transparent-white-hover:hover {
-  color: #fff;
-  background-color: rgba(255,255,255,.1);
+.btn.btn-transparent-white-hover
+{
   border-color: transparent;
+  &:focus,
+  &:active,
+  &:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+    border-color: transparent;
+  }
 }
-
 
 .menu-toggle[aria-expanded="true"]::after {
   transform: rotate(90deg);
@@ -227,10 +232,23 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 98;
+  z-index: 100;
   width: $width-sidebar-primary;
   //height: 100%;
   background-color: $blue-400;
+
+  
+  .dropend .dropdown-toggle::after{
+    color: #fff;
+  }
+
+  .btn[aria-selected="true"]
+  {
+    color: #fff;
+    background-color: rgba(255,255,255,.1);
+    border-color: transparent;
+  }
+
 }
 .main-sidebar-secondary{
   width: $width-sidebar-secondary;
@@ -238,21 +256,65 @@ body {
   top: 0;
   bottom: 0;
   left: $width-sidebar-primary;
-  z-index: 98;
+  z-index: 99;
   //height: 100%;
   background-color: #fff;
 }
 
 .main-container{
-  padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
   width: 100%;
   height: 100vh;
+  z-index: 98;
 
   .main-container-wrapper{
     height: 100vh;
   }
+
+  //temperorary
+  padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
 }
+
+/*
+.main-container-with-sidebars{
+  padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
+}
+.main-container-with-sidebar-primary{
+  padding-left: $width-sidebar-primary;
+}
+.main-container-with-sidebar-secondary{
+  padding-left: $width-sidebar-secondary;
+}
+*/
 
 .btn-icon-text svg g [fill]{
   fill:#fff;
+}
+
+.btn-toggle-sidebar-secondary{
+  height: 32px !important;
+  width: 32px !important;
+  position: absolute;
+  right: - calc($width-sidebar-secondary + 16px);
+  bottom: 16px;
+  background: $blue-400;
+}
+.btn-toggle-sidebar-secondary{
+  height: 32px !important;
+  width: 32px !important;
+  position: absolute;
+  bottom: 16px;
+  background: $blue-400;
+  border-color: transparent;
+}
+.btn-toggle-sidebar-secondary[data-visible=true]{
+  transform: rotate(180deg);
+}
+
+
+.main-loader{
+  position: absolute;
+  z-index: 9999;
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
 }
