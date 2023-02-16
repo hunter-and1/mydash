@@ -36,7 +36,7 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #3699ff !default;
+$blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
@@ -864,7 +864,7 @@ $form-color-width:                      3rem !default;
 // scss-docs-end form-input-variables
 
 // scss-docs-start form-check-variables
-$form-check-input-width:                  1em !default;
+$form-check-input-width:                  1.3em !default;
 $form-check-min-height:                   $font-size-base * $line-height-base !default;
 $form-check-padding-start:                $form-check-input-width + .5em !default;
 $form-check-margin-bottom:                .125rem !default;
