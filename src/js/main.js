@@ -6,8 +6,8 @@
     * Author : Abdellah Elkadiri  (abdellah.elkadiri.dev@gmail.com)
     * Copyright 2018-2019 
     */
-    var _version = 0.12;
-    var $dom = {
+    const _version = 0.12;
+    const $dom = {
         window: $(win),
         body: $('body'),
 
@@ -15,15 +15,15 @@
         
         
         
-        mainLoader: $('.main-loader'),
-        mainContainer: $('.main-container'),
+        mainLoader: $('#main-loader'),
+        mainContainer: $('#main-container'),
 
-        sidebarListPrimary: $('.main-sidebar-primary'),
-        sidebarListPrimaryTop: $('.main-sidebar-primary .list-menu-top'),
+        sidebarListPrimary: $('#main-sidebar-primary'),
+        sidebarListPrimaryTop: $('#main-sidebar-primary .list-menu-top'),
 
-        sidebarListSecondary: $('.main-sidebar-secondary'),
+        sidebarListSecondary: $('#main-sidebar-secondary'),
 
-        btnToggleSidebarSecondary: $('.btn-toggle-sidebar-secondary'),
+        btnToggleSidebarSecondary: $('#btn-toggle-sidebar-secondary'),
 
         //sidebarBrand: $('.main-sidebar .brand-link'),
         //sidebarPanel: $('.main-sidebar .user-panel'),
@@ -33,39 +33,19 @@
         //sidebarButtonRightPanel: $('a[data-widget=control-sidebar]')
     };
 
-    var nexDash = {
-        $var: {
-            isMobile: navigator.userAgent.match(/iPhone|iPod|Android|IEMobile/ig),
-            isIpad: navigator.userAgent.match(/iPad/i),
-            isIos7: navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i),
-            mobileType: navigator.userAgent.toLowerCase(),
-            config: {
-                selectorName: {
-                    bodyWrapper: '.wrapper',
-                    treeviewNav: '.nav-treeview',
-                    sidebarOverlay: '#sidebar-overlay'
-                },
-                className: {
-                    treeviewMenuOpen: 'menu-open',
-                    sidebarOpen: 'sidebar-open',
-                    sidebarCollapse: 'sidebar-collapse'
-                },
-                triggerName: {
-                    sidebarOpen: 'sidebar:open',
-                    sidebarCollapse: 'sidebar:collapse'
-                },
-                getHeights: function getHeights() {
-                    return {
-                        window: $dom.window.height(),
-                        sidebar: {
-                            brand: $dom.sidebarBrand.outerHeight(),
-                            side: $dom.sidebarSide.height(),
-                            upanel: $dom.sidebarPanel.outerHeight() + 16 // add padding
-                        }
-                    };
-                }
-            }
-        },
+    const $var = {
+        isMobile: navigator.userAgent.match(/iPhone|iPod|Android|IEMobile/ig),
+        isIpad: navigator.userAgent.match(/iPad/i),
+        isIos7: navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i),
+        mobileType: navigator.userAgent.toLowerCase(),
+        
+    };
+
+    const $osInstance = {
+        OverlayScrollbars: OverlayScrollbarsGlobal.OverlayScrollbars
+    };
+    
+    const nexDash = {
         version: function() {
             return _version;
         },
@@ -104,8 +84,8 @@
             }, 200);
         },
         initSideBar: function() {
-            //OverlayScrollbars($dom.sidebarListPrimaryTop, {overflow: {x: 'hidden'}});
-            //OverlayScrollbars($dom.sidebarListSecondary, {overflow: {x: 'hidden'}});
+            $osInstance.OverlayScrollbars($dom.sidebarListPrimaryTop.get(0), {overflow: {x: 'hidden'}});
+            $osInstance.OverlayScrollbars($dom.sidebarListSecondary.get(0), {overflow: {x: 'hidden'}});
         },
         initPopover:function(){
             var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -120,18 +100,14 @@
             })
         },
         whenClickToggleSidebarSecondary: function() {
-
-            console.log('sidebarListPrimary',$dom.sidebarListPrimary.outerWidth());
-            console.log('sidebarListSecondary',$dom.sidebarListSecondary.outerWidth());
-
             if($dom.btnToggleSidebarSecondary.attr('data-visible') == "true")
             {
                 $dom.sidebarListSecondary.animate({
-                        left: -1 * ($dom.sidebarListSecondary.outerWidth() + 90) ,
+                        left: -1 * ($dom.sidebarListSecondary.outerWidth() + $dom.sidebarListPrimary.outerWidth()) ,
                     }, 300, function() {
                 });
                 $dom.btnToggleSidebarSecondary.animate({
-                        right: -16 ,
+                    left: ($dom.sidebarListPrimary.outerWidth() - 16),
                     }, 300, function() {
                 });
 
@@ -141,18 +117,16 @@
 
                 });
 
-               // $dom.mainContainer.removeClass('main-container-with-sidebars').addClass('main-container-with-sidebar-primary');
-
                 $dom.btnToggleSidebarSecondary.attr('data-visible',"false");
             }
             else
             {
                 $dom.sidebarListSecondary.animate({
-                        left: "90px",
+                        left: $dom.sidebarListPrimary.outerWidth(),
                     }, 300, function() {
                 });
                 $dom.btnToggleSidebarSecondary.animate({
-                        right: -1 * ($dom.sidebarListSecondary.outerWidth() + 16),
+                    left: ($dom.sidebarListSecondary.outerWidth() + $dom.sidebarListPrimary.outerWidth() - 16),
                     }, 300, function() {
                 });
                 $dom.mainContainer.animate({
@@ -171,11 +145,12 @@
         },
         whenResize: function() {
             nexDash.initSideBar();
+
         },
         whenOrientationChange: function() {
             var orientation = win.orientation;
             if (orientation != 0) {
-                if ($vars.isMobile) {
+                if ($var.isMobile) {
                     $dom.body.addClass("landscape-mobile");
                 }
             } else {

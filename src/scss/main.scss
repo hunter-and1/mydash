@@ -2,8 +2,6 @@
 @import "../../node_modules/bootstrap/scss/mixins/banner";
 @include bsBanner("");
 
-
-// scss-docs-start import-stack
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
 @import "variables";
@@ -19,7 +17,8 @@
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/tables";
+
+@import "tables";
 
 @import "../../node_modules/bootstrap/scss/forms";
 
@@ -227,7 +226,7 @@ body {
   min-width: 0;
 }
 
-.main-sidebar-primary{
+#main-sidebar-primary{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -250,7 +249,7 @@ body {
   }
 
 }
-.main-sidebar-secondary{
+#main-sidebar-secondary{
   width: $width-sidebar-secondary;
   position: fixed;
   top: 0;
@@ -261,7 +260,7 @@ body {
   background-color: #fff;
 }
 
-.main-container{
+#main-container{
   width: 100%;
   height: 100vh;
   z-index: 98;
@@ -274,47 +273,41 @@ body {
   padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
 }
 
-/*
-.main-container-with-sidebars{
-  padding-left: calc($width-sidebar-primary + $width-sidebar-secondary);
-}
-.main-container-with-sidebar-primary{
-  padding-left: $width-sidebar-primary;
-}
-.main-container-with-sidebar-secondary{
-  padding-left: $width-sidebar-secondary;
-}
-*/
-
 .btn-icon-text svg g [fill]{
   fill:#fff;
 }
 
-.btn-toggle-sidebar-secondary{
+#btn-toggle-sidebar-secondary{
+  z-index: 1039;
   height: 32px !important;
   width: 32px !important;
-  position: absolute;
-  right: - calc($width-sidebar-secondary + 16px);
+  position: fixed;
   bottom: 16px;
-  background: $blue-400;
-}
-.btn-toggle-sidebar-secondary{
-  height: 32px !important;
-  width: 32px !important;
-  position: absolute;
-  bottom: 16px;
+  left: calc($width-sidebar-secondary + $width-sidebar-primary - 16px);
   background: $blue-400;
   border-color: transparent;
 }
-.btn-toggle-sidebar-secondary[data-visible=true]{
+
+#btn-toggle-sidebar-secondary[data-visible=true]{
   transform: rotate(180deg);
 }
 
-
-.main-loader{
+#main-loader{
   position: absolute;
   z-index: 9999;
   background: #f2f2f2;
   width: 100%;
   height: 100%;
+}
+
+@include media-breakpoint-between(xs, md) { 
+  #main-sidebars{display:none;}
+  #main-container{padding-left: 0!important;}
+
+}
+@include media-breakpoint-down(md) { 
+  .btn-mobile-toggle{display:inline-flex!important;} 
+}
+@include media-breakpoint-up(md) { 
+  .btn-mobile-toggle{display:none!important;} 
 }

@@ -4,8 +4,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="assets/css/vendor.min.css" />
+  <link rel="stylesheet" href="assets/css/vendor.min.css?v=<?php echo time() ?>" />
   <link rel="stylesheet" href="assets/css/main.css?v=<?php echo time() ?>" />
+  <link rel="stylesheet" href="assets/css/fontawesome/fontawesome.min.css?v=<?php echo time() ?>" />
+  <link rel="stylesheet" href="assets/css/plugins.min.css?v=<?php echo time() ?>" />
+  <link rel="stylesheet" href="assets/css/datatables-core.min.css?v=<?php echo time() ?>" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
   <title>MyDash</title>
 </head>
 
@@ -53,7 +66,7 @@
       ?>
       <div class="list-menu-top flex-fill">
         <a href="/" class="d-flex justify-content-center my-5">
-          <img src="http://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" class="img-fluid" width="60">
+          <img src="assets/img/logo.png" class="img-fluid" width="60">
         </a>
         <ul class=" list-unstyled my-3 align-items-center text-center">
         <?php foreach ($listBottom as $k => $item): ?>
@@ -594,8 +607,10 @@
       </footer>      
     </div>
   </div>
-  <script src="assets/js/vendor.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/vendor.min.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/main.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/plugins.min.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/datatables-core.min.js?v=<?php echo time() ?>"></script>
   <script>
 
     console.log(nexDash.version());
