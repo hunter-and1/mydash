@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="assets/css/vendor.min.css?v=<?php echo time() ?>" />
   <link rel="stylesheet" href="assets/css/main.css?v=<?php echo time() ?>" />
-  <link rel="stylesheet" href="assets/css/fontawesome/fontawesome.min.css?v=<?php echo time() ?>" />
   <link rel="stylesheet" href="assets/css/plugins.min.css?v=<?php echo time() ?>" />
-  <link rel="stylesheet" href="assets/css/datatables-core.min.css?v=<?php echo time() ?>" />
+
+  <link rel="stylesheet" href="assets/css/bootstrap-icons/bootstrap-icons.min.css?v=<?php echo time() ?>" />
+  <link rel="stylesheet" href="assets/css/datatables/datatables-core.min.css?v=<?php echo time() ?>" />
+  <link rel="stylesheet" href="assets/css/fullcalendar/fullcalendar.min.css?v=<?php echo time() ?>" />
   <title>MyDash</title>
   
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -353,11 +355,12 @@
           <div class="input-group" id="datetimepicker1" data-td-target-input="nearest" data-td-target-toggle="nearest">
               <input id="datetimepicker1Input" type="text" class="form-control" data-td-target="#datetimepicker1"/>
               <span class="input-group-text" data-td-target="#datetimepicker1" data-td-toggle="datetimepicker">
-                <span class="fas fa-calendar"></span>
+                <span class="bi bi-calendar"></span>
               </span>
           </div>
 
-          
+          <div id='calendar'></div>
+
         </div> 
 
         <footer class="main-footer text-center">
@@ -369,15 +372,31 @@
   </div>
   <script src="assets/js/vendor.min.js?v=<?php echo time() ?>"></script>
   <script src="assets/js/plugins.min.js?v=<?php echo time() ?>"></script>
-  <script src="assets/js/datatables-core.min.js?v=<?php echo time() ?>"></script>
-  <script src="assets/js/main.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/datatables/datatables-core.min.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/fullcalendar/fullcalendar.min.js?v=<?php echo time() ?>"></script>
+
   <script src="assets/js/consts.js?v=<?php echo time() ?>"></script>
+  <script src="assets/js/main.js?v=<?php echo time() ?>"></script>
   <script>
     console.log(nexDash.version());
     $(document).ready(function () {
-      $('#example').DataTable({"language": DATATABLE_LANG});
-      $('.js-example-basic-single').select2({theme: "bootstrap-5",width:200});
-      $('#datetimepicker1').tempusDominus({display:{theme:'light'},localization:{startOfTheWeek:1}});
+      nexDash.dataTable('#example');
+      nexDash.select('.js-example-basic-single',{width:300});
+      nexDash.dateTimePicker('#datetimepicker1');
+      //$('.js-example-basic-single').select2({width:300});
+      //$('#datetimepicker1').tempusDominus({display:{theme:'light'},localization:{startOfTheWeek:1}});
+
+      const calendarEl = nexDash.fullCalendar('#calendar', {
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        weekNumbers: true,
+        dayMaxEvents: true, // allow "more" link when too many events
+        events: 'https://fullcalendar.io/api/demo-feeds/events.json'
+      });
+      calendarEl.render();
     });
   </script>
 </body>

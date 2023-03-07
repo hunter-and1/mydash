@@ -44,7 +44,7 @@
     const $osInstance = {
         OverlayScrollbars: OverlayScrollbarsGlobal.OverlayScrollbars
     };
-    
+
     const nexDash = {
         version: function() {
             return _version;
@@ -56,6 +56,11 @@
             this.initPopover();
             this.initTooltip();
             this.initLoader();
+
+            //this.initDataTable();
+            //this.initSelect2();
+            //this.initTempusDominus();
+
             this.events();
 
         },
@@ -78,6 +83,9 @@
             $dom.window.on("resize", this.whenResize);
             $dom.window.on("orientationchange", this.whenOrientationChange);
         },
+
+
+
         initLoader: function () {
             setTimeout(() => {
                 $dom.mainLoader.remove();
@@ -139,6 +147,88 @@
                 $dom.btnToggleSidebarSecondary.attr('data-visible',"true");
             }
         },
+
+        //instance
+        fullCalendar:function(selector, options){
+            if (typeof FullCalendar === "undefined") {
+                throw new Error("FullCalendar is not available.");
+            }
+        
+            let NxFullCalendar = class extends FullCalendar.Calendar {
+                constructor(el, options) {
+                    super(el, Object.assign({}, NxFullCalendar.defaults, options));
+                }
+            };
+        
+            NxFullCalendar.defaults = {
+                locale: 'fr',
+                timeZone: 'UTC',
+                themeSystem: 'bootstrap5',
+                firstDay: '1',
+            };
+            return new NxFullCalendar($(selector).get(0), options);
+        },
+        dataTable:function(selector, options){
+            if ($.fn.dataTable !== undefined) {
+                var dataTableOptions = $.extend($.fn.dataTable.defaults, {
+                    language: DATATABLE_LANG
+                }, options);
+                return $(selector).DataTable(dataTableOptions);
+            }
+            return null;
+        },
+        select:function(selector, options){
+            if ($.fn.select2 !== undefined) {
+                var select2Options = $.extend($.fn.select2.defaults.defaults, {
+                    theme: "bootstrap-5"
+                }, options);
+                return $(selector).select2(select2Options);
+            }
+            return null;
+        },
+        dateTimePicker:function(selector, options){
+            if (typeof tempusDominus.TempusDominus === "undefined") {
+                throw new Error("tempusDominus.TempusDominus is not available.");
+            }
+
+            tempusDominus.extend(tempusDominus.plugins.moment_parse, 'DD/MM/yyyy HH:mm');
+            var tempusDominusOptions = $.extend({
+                display: {
+                    theme: 'light',
+                    icons: {
+                        type: 'icons',
+                        time: 'bi bi-clock',
+                        date: 'bi bi-calendar',
+                        up: 'bi bi-arrow-up',
+                        down: 'bi bi-arrow-down',
+                        previous: 'bi bi-chevron-left',
+                        next: 'bi bi-chevron-right',
+                        today: 'bi bi-calendar-check',
+                        clear: 'bi bi-trash-fill',
+                        close: 'bi bi-x'
+                    },
+                    components: {
+                        calendar: true,
+                        date: true,
+                        month: true,
+                        year: true,
+                        decades: true,
+                        clock: false,
+                        hours: false,
+                        minutes: false,
+                        seconds: false,
+                    },
+                },
+                localization: {
+                    startOfTheWeek: 1,
+                    locale: 'fr',
+                },
+            }, options);
+
+            return new tempusDominus.TempusDominus($(selector).get(0),tempusDominusOptions);
+        },
+
+
         //Action
         triggerSidebarOpen: function() {
             $(this).removeClass(nexDash.$var.config.className.sidebarCollapse).addClass(nexDash.$var.config.className.sidebarOpen);

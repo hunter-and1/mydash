@@ -102,13 +102,13 @@ gulp.task('styles:datatables',async function(){
         'src/custom-plugins/datatables/DataTables-1.13.2/css/dataTables.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-core.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Buttons-2.3.4/css/buttons.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-buttons.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
 
     tasksSrc.push(gulp.src([
@@ -116,32 +116,32 @@ gulp.task('styles:datatables',async function(){
         'src/custom-plugins/datatables/FixedHeader-3.3.1/css/fixedHeader.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-fixed-header-columns.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Responsive-2.4.0/css/responsive.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-responsive.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Scroller-2.1.0/css/scroller.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-scroller.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/SearchPanes-2.1.1/css/searchPanes.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-search-panes.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
 
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Select-1.6.0/css/select.bootstrap5.min.css',
     ])
     .pipe(contact("datatables-select.min.css"))
-    .pipe(gulp.dest('./dist/assets/css/')))
+    .pipe(gulp.dest('./dist/assets/css/datatables/')))
     return merge(tasksSrc);
 });
 
@@ -154,14 +154,14 @@ gulp.task('scripts:datatables',async function(){
         'src/custom-plugins/datatables/pdfmake-0.1.36/vfs_fonts.js',
     ])
     .pipe(contact("datatables-pdfmake.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/DataTables-1.13.2/js/jquery.dataTables.min.js',
         'src/custom-plugins/datatables/DataTables-1.13.2/js/dataTables.bootstrap5.min.js',
     ])
     .pipe(contact("datatables-core.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Buttons-2.3.4/js/dataTables.buttons.min.js',
@@ -171,46 +171,46 @@ gulp.task('scripts:datatables',async function(){
         'src/custom-plugins/datatables/Buttons-2.3.4/js/buttons.print.min.js',
     ])
     .pipe(contact("datatables-buttons.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/ColReorder-1.6.1/js/dataTables.colReorder.min.js',
     ])
     .pipe(contact("datatables-col-reorder.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/FixedColumns-4.2.1/js/dataTables.fixedColumns.min.js',
         'src/custom-plugins/datatables/FixedHeader-3.3.1/js/dataTables.fixedHeader.min.js',
     ])
     .pipe(contact("datatables-fixed-header-columns.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Responsive-2.4.0/js/dataTables.responsive.min.js',
         'src/custom-plugins/datatables/Responsive-2.4.0/js/responsive.bootstrap5.js',
     ])
     .pipe(contact("datatables-responsive.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Scroller-2.1.0/js/dataTables.scroller.min.js',
     ])
     .pipe(contact("datatables-scroller.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
     
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/SearchPanes-2.1.1/js/dataTables.searchPanes.min.js',
         'src/custom-plugins/datatables/SearchPanes-2.1.1/js/searchPanes.bootstrap5.min.js',
     ])
     .pipe(contact("datatables-search-panes.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     tasksSrc.push(gulp.src([
         'src/custom-plugins/datatables/Select-1.6.0/js/dataTables.select.min.js',
     ])
     .pipe(contact("datatables-select.min.js"))
-    .pipe(gulp.dest('./dist/assets/js/')))
+    .pipe(gulp.dest('./dist/assets/js/datatables/')))
 
     return merge(tasksSrc);
 
@@ -249,17 +249,6 @@ gulp.task('scripts:datatables',async function(){
     // .pipe(gulp.dest('./dist/assets/js/'))
 });
 
-gulp.task('styles:plugins',async function(){
-    return gulp.src([
-        'node_modules/select2/dist/css/select2.css',
-        'src/custom-plugins/select2/select2-bootstrap-5-theme.css',
-        'src/custom-plugins/tempusDominus/tempus-dominus.css',
-    ])
-    .pipe(contact("plugins.min.css"))
-    //.pipe(cssMinify({keepSpecialComments : 0}))
-    .pipe(cssMinify({level: {1: {specialComments: false}}}))
-    .pipe(gulp.dest('./dist/assets/css/'))
-});
 
 
 gulp.task('styles:fontawesome',async function(){
@@ -286,16 +275,72 @@ gulp.task('styles:fontawesome',async function(){
     return merge(tasksSrc);
 });
 
+gulp.task('styles:bootstrap-icons',async function(){
+
+    let tasksSrc = [];
+
+    tasksSrc.push(gulp.src([
+        'node_modules/bootstrap-icons/font/bootstrap-icons.css',
+    ])
+    .pipe(contact("bootstrap-icons.min.css"))
+    .pipe(cssMinify({level: {1: {specialComments: false}}}))
+    .pipe(gulp.dest('./dist/assets/css/bootstrap-icons/')))
+    tasksSrc.push(gulp.src('node_modules/bootstrap-icons/font/fonts/**/*')
+    .pipe(gulp.dest('./dist/assets/css/bootstrap-icons/fonts/')))
+
+    return merge(tasksSrc);
+});
+
+
+gulp.task('styles:plugins',async function(){
+    return gulp.src([
+        'node_modules/select2/dist/css/select2.css',
+        'src/custom-plugins/select2/select2-bootstrap-5-theme.css',
+        'src/custom-plugins/tempusDominus/tempus-dominus.css',
+    ])
+    .pipe(contact("plugins.min.css"))
+    //.pipe(cssMinify({keepSpecialComments : 0}))
+    .pipe(cssMinify({level: {1: {specialComments: false}}}))
+    .pipe(gulp.dest('./dist/assets/css/'))
+});
+
 
 gulp.task('scripts:plugins',async function(){
     return gulp.src([
+        'node_modules/moment/min/moment-with-locales.min.js',
         'node_modules/select2/dist/js/select2.full.min.js',
         'node_modules/@eonasdan/tempus-dominus/dist/js/tempus-dominus.min.js',
-        'node_modules/@eonasdan/tempus-dominus/dist/js/jQuery-provider.min.js',
-        //'node_modules/@eonasdan/tempus-dominus/dist/plugins/fa-five.js',
+        'node_modules/@eonasdan/tempus-dominus/dist/plugins/moment-parse.js',
     ])
     .pipe(contact("plugins.min.js"))
+    .pipe(jsMinify())
     .pipe(gulp.dest('./dist/assets/js/'))
+});
+
+gulp.task('styles:fullcalendar',async function(){
+
+    let tasksSrc = [];
+
+    tasksSrc.push(gulp.src([
+        'node_modules/fullcalendar/main.min.css',
+        'src/custom-plugins/fullcalendar/fullcalendar.css',
+    ])
+    .pipe(contact("fullcalendar.min.css"))
+    .pipe(cssMinify({level: {1: {specialComments: false}}}))
+    .pipe(gulp.dest('./dist/assets/css/fullcalendar/')))
+
+    return merge(tasksSrc);
+});
+
+
+gulp.task('scripts:fullcalendar',async function(){
+    return gulp.src([
+        'node_modules/fullcalendar/main.min.js',
+        'node_modules/fullcalendar/locales/ar.js',
+        'node_modules/fullcalendar/locales/fr.js',
+    ])
+    .pipe(contact("fullcalendar.min.js"))
+    .pipe(gulp.dest('./dist/assets/js/fullcalendar/'))
 });
 
 gulp.task('watch',async function(){
@@ -321,11 +366,14 @@ gulp.task('dev', gulp.series([
     'styles:plugins',
     'styles:datatables',
     'styles:fontawesome',
+    'styles:fullcalendar',
+    'styles:bootstrap-icons',
 
     'scripts',
     'scripts:vendor',
     'scripts:plugins',
     'scripts:datatables',
+    'scripts:fullcalendar',
 
     'php',
     'watch'
@@ -341,11 +389,14 @@ gulp.task('build', gulp.series([
     'styles:plugins',
     'styles:datatables',
     'styles:fontawesome',
+    'styles:fullcalendar',
+    'styles:bootstrap-icons',
 
     'scripts',
     'scripts:vendor',
     'scripts:plugins',
     'scripts:datatables',
+    'scripts:fullcalendar',
 
     'php'
 ]))
